@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<BarChart fx:id="barChart" style="-fx-background-color: lightblue;" title="Thống Kê Tình Hinh Mượn và Trả Sách" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.slh.quanlythuvienapp.ThongKe">
+  <xAxis>
+    <CategoryAxis fx:id="Y" label="Tháng" side="BOTTOM" />
+  </xAxis>
+  <yAxis>
+    <NumberAxis fx:id="X" label="Số Lượng" side="LEFT" />
+  </yAxis>
+</BarChart>

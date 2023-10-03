@@ -1,0 +1,4 @@
+--patch-module
+com.slh.quanlythuvienapp=_
+--add-reads
+com.slh.quanlythuvienapp=ALL-UNNAMED

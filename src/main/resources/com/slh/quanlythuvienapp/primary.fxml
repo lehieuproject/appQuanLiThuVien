@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.slh.quanlythuvienapp.PrimaryController">
+   <items>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Quản lý sách">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbSach" layoutX="4.0" onMouseClicked="#ClickSua" prefHeight="134.0" prefWidth="590.0" />
+                        <TextField fx:id="txtTimKiem" layoutX="337.0" layoutY="191.0" promptText="nhập từ khóa ..." />
+                        <TextField fx:id="txtTheLoai" layoutX="109.0" layoutY="237.0" prefHeight="26.0" prefWidth="105.0" />
+                        <TextField fx:id="txtSoLuong" layoutX="64.0" layoutY="279.0" promptText="nhập số lượng..." />
+                        <TextField fx:id="txtTacGia" layoutX="110.0" layoutY="202.0" prefHeight="26.0" prefWidth="103.0" />
+                        <TextField fx:id="txtTenSach" layoutX="64.0" layoutY="160.0" promptText="nhập tên sách..." />
+                        <Label layoutX="14.0" layoutY="164.0" text="Tên sách " />
+                        <Label layoutX="14.0" layoutY="207.0" text="Tác giả" />
+                        <Label layoutX="12.0" layoutY="241.0" text="Thể loại" />
+                        <Label layoutX="15.0" layoutY="283.0" text="Số lượng" />
+                        <Label layoutX="52.0" layoutY="319.0" text="Tình trạng" />
+                        <Label layoutX="377.0" layoutY="156.0" text="Tìm kiếm" />
+                        <Label layoutX="278.0" layoutY="195.0" text="Từ khóa" />
+                        <ComboBox fx:id="cbTinhTrang" layoutX="134.0" layoutY="315.0" prefHeight="20.0" prefWidth="79.0" />
+                        <Button layoutX="376.0" layoutY="315.0" mnemonicParsing="false" onAction="#delete_ClickSach" text="Xóa" />
+                        <Button layoutX="299.0" layoutY="315.0" mnemonicParsing="false" onAction="#upadate_clickSach" text="Sửa" />
+                        <Button layoutX="237.0" layoutY="316.0" mnemonicParsing="false" onAction="#add_Sach" text="Thêm" />
+                        <TextField fx:id="txttgid" layoutX="64.0" layoutY="202.0" prefHeight="18.0" prefWidth="30.0" />
+                        <TextField fx:id="txttlid" layoutX="65.0" layoutY="237.0" prefHeight="26.0" prefWidth="29.0" />
+                        <Button fx:id="btnDangXuat" layoutX="506.0" layoutY="143.0" mnemonicParsing="false" onAction="#DangXuat" text="Đăng xuất" />
+                        <Button fx:id="btThongKe" layoutX="413.0" layoutY="279.0" mnemonicParsing="false" onAction="#GoThongKe" text="Chuyển đến Trang Thống Kê" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Quản lý đọc giả">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#ClickSua" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbDocGia" layoutX="4.0" onMouseClicked="#hienThi_Click" prefHeight="134.0" prefWidth="590.0" />
+                        <TextField fx:id="txtKeyWord" layoutX="358.0" layoutY="178.0" promptText="nhập từ khóa ..." />
+                        <TextField fx:id="txtEmail" layoutX="85.0" layoutY="246.0" promptText="nhập email..." />
+                        <TextField fx:id="txtSdt" layoutX="85.0" layoutY="284.0" promptText="nhập số điện thoại..." />
+                        <TextField fx:id="txtDiaChi" layoutX="85.0" layoutY="204.0" promptText="nhập địa chỉ..." />
+                        <TextField fx:id="txtTen" layoutX="85.0" layoutY="161.0" promptText="nhập tên tác giả..." />
+                        <Label layoutX="14.0" layoutY="164.0" text="Tên đọc giả" />
+                        <Label layoutX="14.0" layoutY="207.0" text="Địa chỉ" />
+                        <Label layoutX="18.0" layoutY="254.0" text="Email" />
+                        <Label layoutX="6.0" layoutY="288.0" text="Số điện thoại" />
+                        <Label layoutX="398.0" layoutY="143.0" text="Tìm kiếm" />
+                        <Label layoutX="299.0" layoutY="182.0" text="Từ khóa" />
+                        <Button layoutX="189.0" layoutY="315.0" mnemonicParsing="false" onAction="#delete_Click" text="Xóa" />
+                        <Button layoutX="124.0" layoutY="315.0" mnemonicParsing="false" onAction="#upadate_click" text="Sửa" />
+                        <Button layoutX="62.0" layoutY="315.0" mnemonicParsing="false" onAction="#addDocGia" text="Thêm" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Quản lý sách mượn">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbMuonTra" layoutX="4.0" onMouseClicked="#tbMuoseClick" prefHeight="128.0" prefWidth="590.0" />
+                        <TextField fx:id="tfs" layoutX="431.0" layoutY="182.0" promptText="nhập từ khóa ..." />
+                        <TextField fx:id="tfMS" layoutX="98.0" layoutY="203.0" prefHeight="26.0" prefWidth="41.0" />
+                        <TextField fx:id="tfMDG" layoutX="98.0" layoutY="167.0" prefHeight="26.0" prefWidth="41.0" />
+                        <Label layoutX="14.0" layoutY="172.0" text="Mã đọc giả" />
+                        <Label layoutX="13.0" layoutY="208.0" text="Mã sách mượn" />
+                        <Label layoutX="12.0" layoutY="249.0" text="Ngày mượn" />
+                        <Label layoutX="400.0" layoutY="137.0" text="Tìm kiếm">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Label>
+                        <Button layoutX="317.0" layoutY="324.0" mnemonicParsing="false" onAction="#deleteMuonTra" text="Xóa" />
+                        <Button layoutX="68.0" layoutY="324.0" mnemonicParsing="false" onAction="#addMuonTra" text="Thêm" />
+                        <Button layoutX="183.0" layoutY="324.0" mnemonicParsing="false" onAction="#upadateMuonTra" text="Sửa" />
+                        <DatePicker fx:id="dpNM" layoutX="98.0" layoutY="245.0" prefHeight="26.0" prefWidth="128.0" />
+                        <ComboBox fx:id="cbkey" layoutX="350.0" layoutY="181.0" onAction="#change" prefHeight="26.0" prefWidth="73.0" />
+                        <TextField fx:id="tfs2" editable="false" layoutX="491.0" layoutY="127.0" opacity="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                        <TextField fx:id="tfMDGName" editable="false" layoutX="227.0" layoutY="167.0" prefHeight="26.0" prefWidth="108.0" />
+                        <TextField fx:id="tfMSName" editable="false" layoutX="227.0" layoutY="204.0" prefHeight="26.0" prefWidth="108.0" />
+                        <Label layoutX="155.0" layoutY="172.0" text="Tên độc giả" />
+                        <Label layoutX="155.0" layoutY="208.0" text="Tên sách" />
+                        <Label layoutX="12.0" layoutY="285.0" text="Ngày trả" />
+                        <DatePicker fx:id="dpNT" layoutX="98.0" layoutY="281.0" prefHeight="21.0" prefWidth="127.0" />
+                        <TextArea fx:id="tatong" layoutX="242.0" layoutY="240.0" prefHeight="68.0" prefWidth="332.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Quản lý nhân viên">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#ClickSua" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbNhanVien" layoutX="4.0" onMouseClicked="#hienThiNhanVien_Click" prefHeight="134.0" prefWidth="590.0" />
+                        <TextField fx:id="txtTKNV" layoutX="358.0" layoutY="178.0" promptText="nhập từ khóa ..." />
+                        <TextField fx:id="txtTaiKhoan" layoutX="85.0" layoutY="246.0" promptText="nhập tài khoản" />
+                        <TextField fx:id="txtTenNV" layoutX="85.0" layoutY="204.0" promptText="nhập tên nhân viên" />
+                        <TextField fx:id="txtHoNV" layoutX="85.0" layoutY="161.0" promptText="nhập họ nhân viên" />
+                        <Label layoutX="14.0" layoutY="164.0" text="Họ NV" />
+                        <Label layoutX="14.0" layoutY="207.0" text="Tên NV" />
+                        <Label layoutX="14.0" layoutY="250.0" text="Tài Khoản" />
+                        <Label layoutX="14.0" layoutY="288.0" text="Mật Khẩu" />
+                        <Label layoutX="398.0" layoutY="143.0" text="Tìm kiếm" />
+                        <Label layoutX="299.0" layoutY="182.0" text="Từ khóa" />
+                        <Button layoutX="471.0" layoutY="233.0" mnemonicParsing="false" onAction="#deleteNV_Click" text="Xóa" />
+                        <Button layoutX="398.0" layoutY="233.0" mnemonicParsing="false" onAction="#upadateNV_click" text="Sửa" />
+                        <Button layoutX="319.0" layoutY="233.0" mnemonicParsing="false" onAction="#addNhanVien" text="Thêm" />
+                        <PasswordField fx:id="pfMatKhau" layoutX="85.0" layoutY="284.0" promptText="nhập mật khẩu" />
+                        <Label layoutX="15.0" layoutY="332.0" text="idInFor" />
+                        <TextField fx:id="txtInfor" layoutX="85.0" layoutY="328.0" promptText="nhập idinfor" />
+                        <Label layoutX="300.0" layoutY="323.0" text="Loại NV" />
+                        <ComboBox fx:id="cbLoaiNhanVien" layoutX="359.0" layoutY="316.0" prefWidth="150.0" />
+                        <Label layoutX="273.0" layoutY="279.0" prefHeight="18.0" prefWidth="54.0" text="Mã NV" />
+                        <TextField fx:id="txtidNV" layoutX="323.0" layoutY="275.0" promptText="nhập id" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </items>
+</SplitPane>
